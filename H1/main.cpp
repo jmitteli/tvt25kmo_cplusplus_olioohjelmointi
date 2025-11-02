@@ -1,5 +1,6 @@
 #include <functions.h>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -35,6 +36,7 @@ int main() {
     case 4:
         try {
             float result = retDiv(a, b);
+            cout << fixed << setprecision(2);
             cout << a << " / " << b << " = " << result << endl;
         } catch (runtime_error &e) {
             cout << "Error: " << e.what() << endl;

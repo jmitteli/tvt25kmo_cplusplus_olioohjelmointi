@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -18,7 +19,8 @@ void calcDiv(int a, int b) {
             throw runtime_error("Division by zero!!!!");
         }
         // If the divider is not zero do the calculation
-        int result = a / b;
+        float result = (float)a / (float)b;
+        cout << fixed << setprecision(2);
         cout << a << " / " << b << " = " << result << endl;
     } catch (runtime_error &e) {
 
