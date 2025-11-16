@@ -1,105 +1,159 @@
 # tvt25kmo_cplusplus_olioohjelmointi
-Olio-ohjelmointi kurssin tehtävät ja harjoitukset
 
-H1:
+Olio-ohjelmoinnin kurssin C++-tehtävät ja harjoitukset.
 
-Luo C++-projekti nimeltään h1
+Sisältö:
+- H1 – Perusfunktiot ja poikkeus
+- Harjoitus 2a – Luokat ja oliot (`Car`, `Rectangle`, `Student`)
+- Harjoitus 2b – Oliolista (`Car` + `std::vector`)
 
-Muokkaa main-funktiota seuraavasti:
-Kysy luvut ja tallenna ne muuttujiin a ja b
-käytä cin ja cout olioita
-Lisää sovellukseen summan ja osamäärän laskemiseen ja tulostamiseen käytettävät funktiot:
-funktio calcSum ottaa vastaan kaksi kokonaislukua ja tulostaa niiden summan, mutta ei palauta mitään.
-funktio calcDiv ottaa vastaan kaksi kokonaislukua ja tulostaa niiden osamäärän, mutta ei palauta mitään.
-jos jakaja on nolla calcDiv tulostaa virheilmoituksen.
-kutsu em. funktioita mainissa antamalla niille argumenttina muuttujat a ja b.
-Lisää sovellukseen toiset summan ja osamäärän laskemiseen ja tulostamiseen käytettävät funktiot:
-funktio retSum ottaa vastaan kaksi kokonaislukua ja palauttaa niiden summan, mutta ei tulosta mitään
-funktio retDiv ottaa vastaan kaksi kokonaisluka ja palauttaa niiden osamäärän (float), mutta ei tulosta mitään
-jos jakaja on nolla retDiv funktiossa "aiheutuu runtime error" eli voit käyttää seuraavaa lausetta
-    throw std::runtime_error("jakaja ei saa olla nolla!");   
+---
 
-**************************************************************************************************
+## H1 – Laskenta funktioilla
 
-Harjoitus2a (luokka, olio)
-Tee jokaiselle luokalle oma .h- ja .cpp-tiedosto. Noudata kussakin luokassa periaatetta
+Luo C++-projekti nimeltä **h1**.
 
-jäsenmuuttujat ovat privaatteja
-metodit ovat publikkeja
-Luo C++-projekti nimeltään h2a
+### Tehtävän kuvaus
 
-Car-luokka
-Lisää projektiin luokka nimeltä Car. Tällä luokalla tulisi olla seuraavat jäsenmuuttujat ja metodit:
+Muokkaa `main`-funktiota seuraavasti:
 
-Jäsenmuuttujat:
-brand: merkkijono, joka sisältää auton merkin.
-model: merkkijono, joka sisältää auton mallin.
-yearModel: kokonaisluku, joka sisältää auton valmistusvuoden.
-Metodit:
-printData(): tulostaa auton merkin, mallin ja valmistusvuoden.
-setBrand(string): asettaa auton merkin.
-setModel(string): asettaa auton mallin.
-setYearModel(int): asettaa auton valmistusvuoden.
-Pääohjelmassa:
+1. **Kysy käyttäjältä kaksi kokonaislukua** ja tallenna ne muuttujiin `a` ja `b`.
+   - Käytä syötteissä ja tulosteissa `cin` ja `cout` -olioita.
 
-Luo Car-olio pinomuistiin ja aseta sille merkki, malli ja vuosi.
-Tulosta auton tiedot käyttämällä printData()-metodia.
-Rectangle-luokka
-Lisää projektiin luokka nimeltä nimeltä Rectangle. Tällä luokalla tulisi olla seuraavat jäsenmuuttujat ja metodit:
+2. **Lisää ohjelmaan funktiot summan ja osamäärän laskemiseen ja tulostamiseen:**
 
-Jäsenmuuttujat:
-width: reaaliluku(double), joka määrittää suorakulmion leveyden.
-height: reaaliluku(double), joka määrittää suorakulmion korkeuden.
-Metodit:
-getArea(): laskee ja palauttaa suorakulmion pinta-alan kaavalla width * height.
-getCircum(): laskee ja palauttaa suorakulmion ympärysmitan kaavalla 2 * (width + height).
-setWidth(double): asettaa suorakulmion leveyden.
-setHeight(double): asettaa suorakulmion korkeuden.
-Pääohjelmassa:
+   - `calcSum(int, int)`  
+     - ottaa vastaan kaksi kokonaislukua  
+     - laskee ja **tulostaa** niiden summan  
+     - **ei palauta** mitään
 
-Luo Rectangle-olio kekomuistiin ja aseta sen leveys ja korkeus.
-Tulosta suorakulmion pinta-ala ja ympärysmitta.
-Tuhoa olio.
-Student-luokka
-Lisää projektiin luokka nimeltä Student. Tällä luokalla tulisi olla seuraavat jäsenmuuttujat ja metodit:
+   - `calcDiv(int, int)`  
+     - ottaa vastaan kaksi kokonaislukua  
+     - laskee ja **tulostaa** niiden osamäärän  
+     - **ei palauta** mitään  
+     - jos jakaja on nolla, **tulostaa virheilmoituksen** (ei kaadu)
 
-Käytä tässä harjoituksessa hyväksesi Qt-Creatorin Refactor toimintoa. Kun olet luonut jäsen muuttujat, klikkaa hiiren oikealla ja valitse "Add Getter and Setter ...".
+   → Kutsu näitä funktioita `main`-funktiosta antaen argumenteiksi muuttujat `a` ja `b`.
 
-Jäsenmuuttujat:
-name: merkkijono, joka sisältää opiskelijan nimen.
-studentNumber: kokonaisluku, joka sisältää opiskelijanumeron.
-average: reaaliluku, joka sisältää opiskelijan keskiarvon.
-Metodit:
-Setterit:
-setName(string): asettaa opiskelijan nimen.
-setStudentNumber(int): asettaa opiskelijanumeron.
-setAverage(double): asettaa opiskelijan keskiarvon.
-Getterit:
-string getName(): palauttaa opiskelijan nimen.
-int getStudentNumber(): palauttaa opiskelijanumeron(merkkimuotoinen tunniste).
-double getAverage(): palauttaa opiskelijan keskiarvon.
-Pääohjelmassa:
+3. **Lisää toiset funktiot, jotka palauttavat arvot mutta eivät tulosta:**
 
-Luo Student-olio smart pointerilla ja aseta sille nimi, opiskelijanumero ja keskiarvo.
-Tulosta opiskelijan tiedot käyttämällä get-metodeja.   
+   - `retSum(int, int)`  
+     - ottaa vastaan kaksi kokonaislukua  
+     - **palauttaa summan**  
+     - ei tulosta mitään
 
-****************************************************************************************************
-Harjoitus2b (oliolista)
-Luo C++-projekti nimeltään h2b
+   - `retDiv(int, int)`  
+     - ottaa vastaan kaksi kokonaislukua  
+     - **palauttaa osamäärän** (`float`)  
+     - ei tulosta mitään  
+     - jos jakaja on nolla, funktiossa aiheutetaan runtime error:
+       ```cpp
+       throw std::runtime_error("jakaja ei saa olla nolla!");
+       ```
 
-Lisää projektiin luokka nimeltä Car. Tällä luokalla tulisi olla seuraavat jäsenmuuttujat ja metodit:
+   → Kutsu näitä funktioita `main`-funktiosta, tallenna palautetut arvot ja tulosta ne `cout`-komennolla.
 
-Jäsenmuuttujat:
-brand: merkkijono, joka sisältää auton merkin.
-model: merkkijono, joka sisältää auton mallin.
-yearModel: kokonaisluku, joka sisältää auton valmistusvuoden.
-Metodit:
-printData(): tulostaa auton merkin, mallin ja valmistusvuoden.
-Car(string, string, int): konstruktori, jolla voidaan alustaa kaikki jäsenmuuttujat
-Pääohjelmassa:
+---
 
-Luo vektori nimeltään carList. (Luo lista pinoon. Et siis tarvitse smart pointteria.)
-Lisää kolme Car-luokan oliota listaan (keksi itse merkit, mallit ja vuosimallit)
-Tulosta listan toisen alkion tiedot.
-Tulosta kaikkien autojen tiedot käyttämällä for-silmukkaa.
-    
+## Harjoitus 2a – Luokka, olio
+
+Luo C++-projekti nimeltä **h2a**.
+
+Tee jokaiselle luokalle oma `.h`- ja `.cpp`-tiedosto. Noudata periaatetta:
+
+- jäsenmuuttujat ovat **private**
+- metodit ovat **public**
+
+### 1. Car-luokka
+
+Luo luokka `Car`, jolla on seuraavat jäsenet.
+
+**Jäsenmuuttujat:**
+
+- `brand` – `std::string`, auton merkki
+- `model` – `std::string`, auton malli
+- `yearModel` – `int`, auton valmistusvuosi
+
+**Metodit:**
+
+- `void printData();`  
+  - tulostaa auton merkin, mallin ja valmistusvuoden
+
+- `void setBrand(std::string);`  
+  - asettaa auton merkin
+
+- `void setModel(std::string);`  
+  - asettaa auton mallin
+
+- `void setYearModel(int);`  
+  - asettaa auton valmistusvuoden
+
+**Pääohjelmassa (`main`):**
+
+- Luo `Car`-olio **pinomuistiin** (esim. `Car car;`)
+- Aseta merkki, malli ja vuosimalli sette­rimetodeilla
+- Tulosta auton tiedot `printData()`-metodilla
+
+---
+
+### 2. Rectangle-luokka
+
+Luo luokka `Rectangle`, jolla on seuraavat jäsenet.
+
+**Jäsenmuuttujat:**
+
+- `width` – `double`, suorakulmion leveys  
+- `height` – `double`, suorakulmion korkeus  
+
+**Metodit:**
+
+- `double getArea();`  
+  - palauttaa pinta-alan kaavalla  
+    `width * height`
+
+- `double getCircum();`  
+  - palauttaa ympärysmitan kaavalla  
+    `2 * (width + height)`
+
+- `void setWidth(double);`  
+  - asettaa suorakulmion leveyden
+
+- `void setHeight(double);`  
+  - asettaa suorakulmion korkeuden
+
+**Pääohjelmassa (`main`):**
+
+- Luo `Rectangle`-olio **kekomuistiin** (esim. `Rectangle* rect = new Rectangle();`)
+- Aseta leveys ja korkeus setterimetodeilla
+- Tulosta pinta-ala (`getArea()`) ja ympärysmitta (`getCircum()`)
+- Tuhoa olio lopuksi `delete`-komennolla
+
+---
+
+### 3. Student-luokka
+
+Luo luokka `Student`. Käytä Qt Creatorin **Refactor → Add Getter and Setter** -toimintoa, kun olet luonut jäsenmuuttujat.
+
+**Jäsenmuuttujat:**
+
+- `name` – `std::string`, opiskelijan nimi
+- `studentNumber` – `int`, opiskelijanumero
+- `average` – `double`, opiskelijan keskiarvo
+
+**Setterit:**
+
+- `void setName(std::string);`
+- `void setStudentNumber(int);`
+- `void setAverage(double);`
+
+**Getterit:**
+
+- `std::string getName();`
+- `int getStudentNumber();`
+- `double getAverage();`
+
+**Pääohjelmassa (`main`):**
+
+- Luo `Student`-olio **älykkäällä osoittimella**, esim.:
+  ```cpp
+  std::unique_ptr<Student> student = std::make_unique<Student>();
