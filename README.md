@@ -157,3 +157,49 @@ Luo luokka `Student`. Käytä Qt Creatorin **Refactor → Add Getter and Setter*
 - Luo `Student`-olio **älykkäällä osoittimella**, esim.:
   ```cpp
   std::unique_ptr<Student> student = std::make_unique<Student>();
+  
+
+## Harjoitus 3a – Luokka, perintä
+
+## Tehtävänanto
+
+Toteuta C++:lla Qt Creator -ympäristössä konsolisovellus, jossa on kaksi luokkaa:
+
+- `Chef`
+- `ItalianChef`, joka perii luokan `Chef`
+
+Luokat jaetaan omiin tiedostoihinsa (`.h` ja `.cpp`).
+
+### Chef
+
+Toteuta luokka `Chef` siten, että:
+
+- Konstruktorissa annetaan kokin nimi ja tulostetaan tieto konstruktorin kutsumisesta.
+- Destruktorissa tulostetaan tieto destruktorin kutsumisesta.
+- `makeSalad()` tulostaa, että kokki tekee salaattia.
+- `makeSoup()` tulostaa, että kokki tekee keittoa.
+- `name`-jäsen on `protected`, jotta aliluokka pääsee siihen käsiksi.
+
+### ItalianChef
+
+
+Toteuta luokka `ItalianChef` siten, että:
+
+- Se perii julkisesti luokan `Chef`: `class ItalianChef : public Chef`.
+- Konstruktorissa välitetään nimi kantaluokan konstruktorille ja tulostetaan tieto konstruktorin kutsumisesta.
+- Destruktorissa tulostetaan tieto destruktorin kutsumisesta.
+- `getName()` palauttaa kokin nimen.
+- `makePasta()` tulostaa, että kokki tekee pastaa.
+
+### Pääohjelma
+
+Pääohjelmassa:
+
+1. Luodaan lohkossa (`{ ... }`) `Chef`-olio (esim. `"Gordon Ramsay"`), kutsutaan `makeSalad()` ja `makeSoup()`, ja annetaan olion tuhoutua lohkon lopussa.
+2. Luodaan erillisessä lohkossa `ItalianChef`-olio (esim. `"Anthony Bourdain"`), kutsutaan `makeSalad()`, `makeSoup()` ja `makePasta()`, sekä tulostetaan `getName()`-metodin palauttama nimi.
+
+Tulosteesta tulee ilmetä konstruktoreiden ja destruktoreiden kutsumisjärjestys sekä metodikutsut.
+
+
+
+
