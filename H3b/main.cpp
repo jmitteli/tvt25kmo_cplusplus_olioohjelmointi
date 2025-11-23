@@ -44,6 +44,7 @@ int main()
     animals.push_back(std::make_unique<Dog>());
     animals.push_back(std::make_unique<Cat>());
     animals.push_back(std::make_unique<Bird>());
+    cout<<endl;
 
     for (const auto& animal : animals) {
         animal->callOut();

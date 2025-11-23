@@ -203,3 +203,26 @@ Tulosteesta tulee ilmetä konstruktoreiden ja destruktoreiden kutsumisjärjestys
 
 
 
+# Harjoitus 3b – Perintä ja ylikirjoittaminen
+
+Tämän harjoituksen tarkoituksena on harjoitella C++-luokkien perintää sekä virtuaalisten metodien ylikirjoittamista.
+
+## Tehtävänanto
+
+Luo C++-projekti nimeltä **h3b** ja toteuta siihen seuraavat asiat:
+
+1. Lisää projektiin kantaluokka nimeltä `Animal`, joka sisältää virtuaalisen metodin `callOut`.  
+   Metodin tulee tulostaa teksti:  
+   **`"Eläin ääntelee."`**
+
+2. Luo kantaluokasta perivä luokka nimeltä `Dog`, joka ylikirjoittaa metodin `callOut`.  
+   Ylikirjoitetun metodin tulee tulostaa teksti:  
+   **`"Koira haukkuu!"`**
+
+3. Kirjoita `main`-funktio, jossa luodaan `Animal`-luokan olio ja `Dog`-luokan olio.
+
+4. Kutsu molemmille olioille metodia `callOut` ja varmista, että kummassakin tapauksessa tulostuu oikea viesti.
+
+5. Varmista, että luomasi oliot tuhoutuvat ohjelman suorituksen lopussa (esimerkiksi lohkon loppuessa).
+
+
