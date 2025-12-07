@@ -226,3 +226,69 @@ Luo C++-projekti nimeltä **h3b** ja toteuta siihen seuraavat asiat:
 5. Varmista, että luomasi oliot tuhoutuvat ohjelman suorituksen lopussa (esimerkiksi lohkon loppuessa).
 
 
+## Harjoitus 5 – Osoittimet, referenssit ja olio argumenttina (h5)
+
+### Tavoite
+Kerrataan C++:n käsitteet **muistiosoite**, **osoitin (pointer)** ja **referenssi (viittaus)** sekä havainnollistetaan ero olion **kopiona** ja **referenssinä** välittämisessä.
+
+### Projektin luonti
+- Luo C++-projekti nimeltä **h5**
+- Luo jokaiselle luokalle omat `.h`- ja `.cpp`-tiedostot
+
+---
+
+### Osoitin (pointer)
+1. Luo `main()`-funktiossa `int a = 5;`
+2. Tulosta `a`-muuttujan arvo ja osoite (`&a`)
+3. Luo osoitin `int* pointerA = &a;`
+4. Tulosta
+   - `pointerA` (osoite, johon osoitin viittaa)
+   - `*pointerA` (osoitteen sisältö)
+
+---
+
+### Referenssi (viittaus)
+1. Luo referenssi `int& refA = a;`
+2. Tulosta
+   - `&refA` (mihin osoitteeseen refA viittaa)
+   - `refA` (muuttujan sisältö)
+
+---
+
+### Pointer vs referenssi (b-kokeilu)
+1. Lisää `int b = 6;`
+2. Kokeile/selvitä:
+   - Voiko `refA` alkaa viitata `b`:hen? (ei voi)
+   - Voiko `pointerA` alkaa osoittaa `b`:hen? (voi)
+3. Havaitse erot:
+   - `pointerA` vs `*pointerA`
+   - `refA` vs `&refA`
+
+---
+
+## Olio argumenttina (kopio)
+
+### ClassB
+- `private string info;`
+- `getInfo()` ja `setInfo(...)`
+
+### ClassA1 (kopio)
+Toteuta luokka, joka **sisältää oman kopion** ClassB-oliosta: :contentReference[oaicite:0]{index=0}
+
+- Jäsen: `ClassB objectB;`
+- Konstruktori ottaa `ClassB`-olion arvona (kopiona)
+- Metodit:
+  - `string getBinfo();`
+  - `void setBinfo(string);`
+
+Lisää `main.cpp`:ään:
+
+```cpp
+ClassB objB;
+objB.setInfo("Olion B asettama info");
+
+ClassA1 objA1(objB);
+objA1.setBinfo("Olion objA1 asettama info");
+
+cout<<"objB: "<<objB.getInfo()<<endl;
+cout<<"objA1: "<<objA1.getBinfo()<<endl;
