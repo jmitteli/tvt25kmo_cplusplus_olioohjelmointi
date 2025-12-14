@@ -15,5 +15,5 @@ void MyClass::raiseMySignal()
 void MyClass::mySlot()
 {
     qDebug()<<"mySlot:ia kutsuttiin";
-    cout << "mySlot:ia kutsuttiin (cout)" << endl;
+
 }

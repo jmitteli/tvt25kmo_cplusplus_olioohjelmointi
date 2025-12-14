@@ -8,7 +8,6 @@ int main()
 {
 
 
-    qDebug() << "Testi: qDebug toimii?";
 
     MyClass objectA;
 
